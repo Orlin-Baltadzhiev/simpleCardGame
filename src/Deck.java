@@ -3,7 +3,7 @@ import java.util.Arrays;
 
 public class Deck {
     private Card[] deck;
-    private int cardUsed;
+    private int cardUsed = 50;
 
 
     public Deck() {
@@ -14,7 +14,7 @@ public class Deck {
                 deck[cardCounter++] = new Card(value, suit);
             }
         }
-        cardUsed = 0;
+
     }
 
     public void shuffle() {
@@ -24,7 +24,7 @@ public class Deck {
             deck[i] = deck[random];
             deck[random] = temp;
         }
-        cardUsed = 0;
+
     }
 
     public int cardLeft() {
@@ -35,16 +35,16 @@ public class Deck {
 
         if (cardLeft() == 0)
             throw new IllegalArgumentException("There no more card in the deck");
-          removeLastCard();
-        return deck[cardUsed++];
+        removeLastCard();
+        return deck[cardUsed--];
     }
 
     public void removeLastCard() {
-        Card[] deckWithoutLastCard = new Card[deck.length-1];
+        Card[] deckWithoutLastCard = new Card[deck.length - 1];
         if (cardLeft() == 0)
             throw new IllegalArgumentException("There no more card in the deck");
-        for (int i = 0; i < deck.length - 1; i++) {
-            if (deckWithoutLastCard.length - 1 == i + 2)
+        for (int i = 0; i < deck.length; i++) {
+            if (deckWithoutLastCard.length == i)
                 continue;
             deckWithoutLastCard[i] = deck[i];
         }
@@ -54,6 +54,4 @@ public class Deck {
         }
 
     }
-
-
 }

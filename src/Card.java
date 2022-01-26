@@ -27,7 +27,7 @@ public class Card {
         return value;
     }
 
-    public String getValueAsAString(){
+    public String getValueAsAString() {
         return switch (this.value) {
             case 2 -> "2";
             case 3 -> "3";
@@ -45,7 +45,7 @@ public class Card {
         };
     }
 
-    public String getSuitAsAString(){
+    public String getSuitAsAString() {
         return switch (this.suit) {
             case SPADES -> "Spades";
             case HEARTS -> "Hearts";
