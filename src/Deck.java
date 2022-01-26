@@ -14,7 +14,6 @@ public class Deck {
                 deck[cardCounter++] = new Card(value, suit);
             }
         }
-
     }
 
     public void shuffle() {
@@ -24,7 +23,6 @@ public class Deck {
             deck[i] = deck[random];
             deck[random] = temp;
         }
-
     }
 
     public int cardLeft() {
@@ -32,7 +30,6 @@ public class Deck {
     }
 
     public Card dealCard() {
-
         if (cardLeft() == 0)
             throw new IllegalArgumentException("There no more card in the deck");
         removeLastCard();
@@ -52,6 +49,5 @@ public class Deck {
         for (int i = 0; i < deckWithoutLastCard.length; i++) {
             deck[i] = deckWithoutLastCard[i];
         }
-
     }
 }

@@ -19,13 +19,7 @@ public class GameHighOrLow {
         System.out.print("Before we start enter your balance here:");
 
         int balance = scanner.nextInt();
-
-
-        do {
-            int money = play(balance);
-        } while (true);
-
-
+        int result = play(balance);
     }
 
     private static int play(int balance) {
@@ -90,7 +84,6 @@ public class GameHighOrLow {
             //TODO when the cards are 0 -> shuffle
         }
     }
-
 
     private static int checkTheBalanceWithCurrentBet(int balance) {
         int currentBet;
